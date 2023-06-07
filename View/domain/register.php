@@ -16,30 +16,38 @@
             <h4>Registration</h4>
           </div>
           <div class="card-body">
-            <form>
+            <form action="../../Controller/register.php" method="POST">
               <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" class="form-control" placeholder="Enter your username">
+                <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username">
+              </div>
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" class="form-control" placeholder="Enter your First Name">
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" class="form-control" placeholder="Enter your Last Name">
               </div>
               <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" id="email" class="form-control" placeholder="Enter your email address">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address">
               </div>
               <div class="form-group">
                 <label for="confirmEmail">Confirm email address</label>
-                <input type="email" id="confirmEmail" class="form-control" placeholder="Confirm your email address">
+                <input type="email" id="confirmEmail" name="confirmEmail" class="form-control" placeholder="Confirm your email address">
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" class="form-control" placeholder="Enter your password">
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
               </div>
               <div class="form-group">
                 <label for="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm your password">
+                <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirm your password">
               </div>
               <div class="form-group">
                 <label for="city">City</label>
-                <select id="city" class="form-control">
+                <select id="city" name="city" class="form-control">
                   <option value="" selected disabled>Select your city</option>
                   <option value="city1">City 1</option>
                   <option value="city2">City 2</option>
