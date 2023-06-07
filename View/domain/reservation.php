@@ -19,19 +19,19 @@
             <form>
               <div class="form-group">
                 <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" class="form-control" placeholder="Enter your full name">
+                <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" readonly>
               </div>
               <div class="form-group">
                 <label for="city">City</label>
-                <input type="text" id="city" class="form-control" placeholder="Enter your city">
+                <input type="text" id="city" class="form-control" placeholder="Enter your city" readonly>
               </div>
               <div class="form-group">
                 <label for="number">Number</label>
-                <input type="tel" id="number" class="form-control" placeholder="Enter your phone number">
+                <input type="tel" id="number" class="form-control" placeholder="Enter your phone number" readonly>
               </div>
               <div class="form-group">
                 <label for="reservationDate">Reservation Date</label>
-                <input type="date" id="reservationDate" class="form-control">
+                <input type="date" id="reservationDate" class="form-control" readonly>
               </div>
               <div class="form-group">
                 <label for="reservationTime">Reservation Time</label>

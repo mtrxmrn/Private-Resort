@@ -3,4 +3,3 @@
     $IndexDisplay = new index();
     $IndexDisplay->IndexDisplay();
 ?>
-
