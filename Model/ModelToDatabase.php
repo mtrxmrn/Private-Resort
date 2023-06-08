@@ -1,5 +1,5 @@
 <?php
-    include_once '../dbconn.php';
+    require_once '../dbconn.php';
 
     class ModelToDatabase extends Database {
 
@@ -15,8 +15,6 @@
             }
         }
 
-      
-        
         protected function isUsernameExists($username){
 
         // Check if the username exists in the database
@@ -37,8 +35,30 @@
             $count = $stmt->fetchColumn();
     
             return ($count > 0); // Returns true if the count is greater than 0
-            }
-    
+        }
+        
+        protected function UserLogin($useremail, $password)
+        {
+            // Check if the email exists in the database
+            $sql = "SELECT COUNT(*) FROM users WHERE (UserEmail = ? OR Username = ?) AND UserPass = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$useremail, $useremail, $password]); // Use $useremail twice for email and username checks
+            $count = $stmt->fetchColumn();
+
+                if ($count > 0) {
+                    // Fetch the user data separately
+                    $sql = "SELECT id FROM users WHERE (UserEmail = ? OR Username = ?) AND UserPass = ?";
+                    $stmt = $this->connect()->prepare($sql);
+                    $stmt->execute([$useremail, $useremail, $password]);
+                    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+                    return $user['id'];
+                } else {
+                    return false;
+                }
+        }
+
+
+            
     
     }
 

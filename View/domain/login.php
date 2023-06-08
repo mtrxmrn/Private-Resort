@@ -16,14 +16,14 @@
             <h4>Login</h4>
           </div>
           <div class="card-body">
-            <form>
+            <form action="../../Controller/login.php" method="POST">
               <div class="form-group">
                 <label for="username">Username/Email Address</label>
-                <input type="text" id="username" class="form-control" placeholder="Enter your username">
+                <input type="text" id="username" class="form-control" name="useremail"placeholder="Enter your username">
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" class="form-control" placeholder="Enter your password">
+                <input type="password" id="password" class="form-control" name="password" placeholder="Enter your password">
               </div>
               <button type="submit" class="btn btn-primary">Login</button>
             </form>

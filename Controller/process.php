@@ -1,5 +1,5 @@
 <?php
-    include_once '../Model/ModelToDatabase.php';
+    require_once '../Model/ModelToDatabase.php';
 
     class process extends ModelToDatabase{
 
@@ -13,6 +13,10 @@
 
         public function checkEmail($email){
             return $this->isEmailExists($email);
+        }
+
+        public function loginUser($useremail,$password){
+            return $this->UserLogin($useremail,$password);
         }
     }
 ?>
