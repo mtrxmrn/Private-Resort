@@ -8,7 +8,8 @@
      <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--AddDesign -->
-    <link rel="stylesheet" href="CSS/AddDesign.css">
+    <link rel="stylesheet" href="CSS/Index.css">
+
     <!--GoogleFont-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,39 +18,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title>Document</title>
+    <title>JimmsButler</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-dark sticky-top " data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Jims Private Resort</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="index.php">Home
-            <span class="visually-hidden">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" target="_blank" href="View/domain/ContactUs.php">Contact Us</a>
-        </li>
-      </ul>
-   <!--For Register -->   
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link me-1" target="_blank" href="View/domain/register.php">Register</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link me-1" target="_blank" href="View/domain/login.php">Sign-in</a>
-    </li>
-  </ul>
-  <!--For Register --> 
-</div>q
-  </div>
-</nav>
+  <!--Navigation-->
+<?php
+include 'View/domain/Navigation.php'
+?>
 
 <location>
 <h1 class="text-center mt-5 font-family-roboto">Our Local Campus</h1>
@@ -64,18 +39,28 @@
 </location>
 
 <picture>
-<div class="Container mt-5">
-<h1 class="text-center pt-3 font-family-roboto">Picture</h1>
-<div class="d-flex mt-5 justify-content-around">
-    <img class="custom-image" src="View/Images/picture-one.jpg" alt="Image 1">
-    <img class="custom-image" src="View/Images/picture-two.jpg" alt="Image 2">
-    <img class="custom-image" src="View/Images/picture-three.jpg" alt="Image 3">
+<div class="Container p-5 mt-5" id="photos">
+<h1 class="text-center pt-3 font-family-roboto">Our Facilities</h1>
+<div class="d-flex mt-5 justify-content-around font-family-roboto">
+  <div class="image-container text-center">
+    <img class="custom-image" src="View/Images/JimsResortEnt.jpg" alt="Image 1">
+    <h2 class="image-caption mt-4">Jims Resort</h2>
+    </div>
+    <div class="image-container text-center">
+    <img class="custom-image" src="View/Images/Pool.jpg" alt="Image 2">
+    <h2 class="image-caption mt-4">Pool</h2>
+    </div>
+    <div class="image-container text-center">
+    <img class="custom-image" src="View/Images/Cottage.jpg" alt="Image 3">
+    <h2 class="image-caption mt-4">Cottage</h2>
+    </div>
   </div>
   </div>
 </picture>
 
-
-
+<?php
+include 'View/domain/Footer.php'
+?>
 <!-- Optional JavaScript -->
  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

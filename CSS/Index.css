@@ -1,8 +1,8 @@
-/* Dito Mag Add kapag ka, Hindi na sakop ng Bootstrap yung sa style */
+/* Dito Mag Add kapag ka, Hindi na sakop ng Bootstrap yung sa style (Index)*/
 
 .custom-image {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     transition: box-shadow 0.3s;
 }
 .custom-image:hover {
@@ -42,4 +42,13 @@
     position: sticky;
     top: 0;
     z-index: 100;
+}
+.color-pink {
+ color: pink;
+}
+/*Sa Register Css*/
+.gradient-custom-4 {
+    background: #84fab0;
+    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+    background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
 }
