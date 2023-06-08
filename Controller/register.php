@@ -1,5 +1,5 @@
 <?php
-    include_once 'process.php';
+    require_once 'process.php';
 
     $username = $_POST['username'];
     $fname = $_POST['fname'];
