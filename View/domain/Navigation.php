@@ -14,7 +14,7 @@
     <title>JimmsButler</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-dark sticky-top " data-bs-theme="dark">
+<nav class="navbar p- navbar-expand-lg bg-dark sticky-top " data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/index.php">Jims Private Resort</a>
 
@@ -26,19 +26,22 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" target="_blank" href="../../View/domain/ContactUs.php">Contact Us</a>
+          <a class="nav-link" href="../../View/domain/ContactUs.php">Contact Us</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"  href="#photos">Photos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="../../View/domain/profile.php">Profile</a>
         </li>
       </ul>
    <!--For Register -->   
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link me-1" target="_blank" href="../../View/domain/register.php">Register</a>
+      <a class="nav-link me-1"  href="../../View/domain/register.php">Register</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link me-1" target="_blank" href="../../View/domain/login.php">Sign-in</a>
+      <a class="nav-link me-1" href="../../View/domain/login.php">Sign-in</a>
     </li>
   </ul>
   <!--For Register --> 
