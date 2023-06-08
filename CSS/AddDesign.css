@@ -1,0 +1,45 @@
+/* Dito Mag Add kapag ka, Hindi na sakop ng Bootstrap yung sa style */
+
+.custom-image {
+    width: 300px;
+    height: 300px;
+    transition: box-shadow 0.3s;
+}
+.custom-image:hover {
+    box-shadow: 2px 5px 10px black;
+}
+
+.Location-Image {
+    width: 500px;
+    height: 650px;
+}
+.font-family-roboto {
+    font-family: 'Roboto', sans-serif; ;
+}
+.transition-ImageLocation {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("path/to/your-image.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 500px;
+    height: 650px;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+}
+.mt-6 {
+    margin-top: 7em;
+}
+.image-container {
+    position: relative;
+}
+.image-container:hover .transition-ImageLocation {
+    opacity: 1;
+}
+.navbar.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
