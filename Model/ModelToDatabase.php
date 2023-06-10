@@ -57,7 +57,14 @@
                 }
         }
 
-
+            protected function getUserID($id)
+            {
+            $sql = "SELECT * FROM users WHERE id = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$id]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $user;
+            }
             
     
     }
