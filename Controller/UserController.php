@@ -81,7 +81,7 @@
 
             
             $id = $_SESSION['id'];
-            $user = $process->userID($id);
+            $user = $this->getUserID($id);
             
             $username = $user['Username'];
             $fname = $user['Fname'];
