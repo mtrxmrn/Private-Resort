@@ -81,7 +81,6 @@
 
             
             $id = $_SESSION['id'];
-            $process = new process();
             $user = $process->userID($id);
             
             $username = $user['Username'];
