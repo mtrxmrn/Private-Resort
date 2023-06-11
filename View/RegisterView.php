@@ -6,7 +6,7 @@
         
         <div class="card-body ">
           
-          <form action="../../Controller/register.php" method="POST">
+          <form action="index.php?page=register" method="POST">
             <div class="form-group">
               <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username">
             </div>
@@ -50,7 +50,7 @@
               </div>
             </div>
             <div class="form-group text-center">
-            <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-black">Register</button>
+            <button type="submit" name="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-black">Register</button>
             </div>
           </form>
         </div>
