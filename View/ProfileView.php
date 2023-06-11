@@ -10,31 +10,31 @@
             <div class="form-group row">
               <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
               <div class="col-sm-10">
-                <input type="text" id="firstName" class="form-control" placeholder="Enter your first name" readonly>
+              <input type="text" id="firstName" class="form-control" placeholder="<?= $fname ?>" readonly>
               </div>
             </div>
             <div class="form-group row">
               <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
               <div class="col-sm-10">
-                <input type="text" id="lastName" class="form-control" placeholder="Enter your last name" readonly>
+                <input type="text" id="lastName" class="form-control" placeholder="<?= $lname ?>" readonly>
               </div>
             </div>
             <div class="form-group row">
               <label for="phoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
               <div class="col-sm-10">
-                <input type="tel" id="phoneNumber" class="form-control" placeholder="Enter your phone number" readonly>
+                <input type="tel" id="phoneNumber" class="form-control" placeholder="<?= $fname ?>" readonly>
               </div>
             </div>
             <div class="form-group row">
               <label for="email" class="col-sm-2 col-form-label">Email Address</label>
               <div class="col-sm-10">
-                <input type="email" id="email" class="form-control" placeholder="Enter your email address" readonly>
+                <input type="email" id="email" class="form-control" placeholder="<?= $email ?>" readonly>
               </div>
             </div>
             <div class="form-group row">
               <label for="city" class="col-sm-2 col-form-label" >City</label>
               <div class="col-sm-10">
-                <input type="text" id="city" class="form-control" placeholder="Enter your city" readonly>
+                <input type="text" id="city" class="form-control" placeholder="<?= $city ?>" readonly>
               </div>
             </div>
             <button type="submit" class="btn btn-primary">Save Profile</button>

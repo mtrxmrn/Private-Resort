@@ -12,6 +12,7 @@
     require_once 'controllers/LoginController.php';
     require_once 'controllers/RegisterController.php';
     require_once 'controllers/LogoutController.php';
+    require_once 'controllers/ProfileController.php';
     
     // Render the navbar
     
@@ -38,6 +39,9 @@ if (isset($_SESSION['password'])) {
             break;
         case 'register':
             $controller = new RegisterController();
+            break;
+        case 'profile':
+            $controller = new ProfileController();
             break;
         case 'logout':
             $controller = new LogoutController();
