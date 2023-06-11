@@ -1,7 +1,11 @@
 <?php
-    require_once '../Model/ModelToDatabase.php';
+    require_once 'Model/ModelToDatabase.php';
 
-    class User extends ModelToDatabase{
+    class RegisterController extends ModelToDatabase{
+
+        public function controller(){
+           
+        }
 
         public function Register(){
             $username = $_POST['username'];
@@ -15,7 +19,6 @@
 
             $this->RegisterLogic($username,$fname,$lname,$email,$confirmEmail,$confirmPassword,$city,$password);
         }
-
     
         public function RegisterLogic($username,$fname,$lname,$email,$confirmEmail,$confirmPassword,$city,$password){
             
@@ -49,47 +52,7 @@
 
         public function RegisterView(){
             
-            include '../View/domain/register.php';
-            $this->Register();
-        }
-
-        public function Login(){
-
-            $useremail = $_POST['useremail'];
-            $password = $_POST['password'];
-            $id = $this->UserLogin($useremail, $password);
-
-            if ($id) {
-                // Login successful
-                $_SESSION['loggedIn'] = true;
-                $_SESSION['username'] = $useremail;
-                $_SESSION['id'] = $id;
-                // Redirect to the dashboard or any other logged-in page
-                echo "Hello, ". $useremail . ". Your ID is:" . $id; // Testing lang to pre wala kwenta to
-            } else {
-                // Login failed
-                
-                $_SESSION['loggedIn'] = false;
-                echo "Invalid username or password!"; // Set an error message to display on the login page
-                // Handle the login failure, such as displaying the error message or redirecting back to the login page
-                session_destroy();
-            
-            }
-        }
-
-        public function profile(){
-
-            
-            $id = $_SESSION['id'];
-            $user = $this->getUserID($id);
-            
-            $username = $user['Username'];
-            $fname = $user['Fname'];
-            $lname = $user['Lname'];
-            $email = $user['UserEmail'];
-            $city = $user['City']; 
-
-            include '../View/domain/profile.php';
+            include 'View/RegisterView.php';
         }
 
     }

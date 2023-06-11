@@ -1,73 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Required meta tags -->
-     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--AddDesign -->
-    <link rel="stylesheet" href="CSS/Index.css">
-
-    <!--GoogleFont-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title>JimmsButler</title>
-</head>
+<?php
+    session_start();
+    include 'linkmeta/linkmeta.php';   
+    include 'View/Navigation.php';?>
 <body>
-  <!--Navigation-->
 <?php
-include 'View/domain/Navigation.php'
+    // Front Controller
+
+    // Include the necessary files
+    require_once 'controllers/HomeController.php';
+    require_once 'controllers/ContactUsController.php';
+    require_once 'controllers/LoginController.php';
+    require_once 'controllers/RegisterController.php';
+    require_once 'controllers/LogoutController.php';
+    
+    // Render the navbar
+    
+    echo isset($_SESSION['useremail'])
+    ? "Hi, your name is ".$_SESSION['useremail']
+    : "Hi, you are not logged in";
+
+if (isset($_SESSION['password'])) {
+    echo ", your last name is ".$_SESSION['password'];
+}
+    // Get the requested page from the URL
+    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+
+    // Initialize the appropriate controller based on the requested page
+    switch ($page) {
+        case 'home':
+            $controller = new HomeController();
+            break;
+        case 'contact':
+            $controller = new ContactUsController();
+            break;
+        case 'login':
+            $controller = new LoginController();
+            break;
+        case 'register':
+            $controller = new RegisterController();
+            break;
+        case 'logout':
+            $controller = new LogoutController();
+            break;
+        default:
+            $controller = new HomeController();
+            break;
+    }
+    
+    // Process the request
+    $controller->controller();
+    include 'View/Footer.php';
 ?>
 
-<location>
-<h1 class="text-center mt-5 font-family-roboto">Our Local Campus</h1>
-  <div class="Container justify-content-center d-flex mt-5">
-    <div class="image-container">
-      <div class="font-family-roboto text-center text-white transition-ImageLocation">
-    <h1 class="font-family-roboto mt-6">Nueva Ecija</h1>
-    </div>
-    <img class="Location-Image" src="View/Images/LocationImage.jpg" alt="location-image">
-  </div>
-  </div>
-</location>
-
-<picture>
-<div class="Container p-5 mt-5" id="photos">
-<h1 class="text-center pt-3 font-family-roboto">Our Facilities</h1>
-<div class="d-flex mt-5 justify-content-around font-family-roboto">
-  <div class="image-container text-center">
-    <img class="custom-image" src="View/Images/JimsResortEnt.jpg" alt="Image 1">
-    <h2 class="image-caption mt-4">Jims Resort</h2>
-    </div>
-    <div class="image-container text-center">
-    <img class="custom-image" src="View/Images/Pool.jpg" alt="Image 2">
-    <h2 class="image-caption mt-4">Pool</h2>
-    </div>
-    <div class="image-container text-center">
-    <img class="custom-image" src="View/Images/Cottage.jpg" alt="Image 3">
-    <h2 class="image-caption mt-4">Cottage</h2>
-    </div>
-  </div>
-  </div>
-</picture>
-
-<?php
-include 'View/domain/Footer.php'
-?>
 <!-- Optional JavaScript -->
  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<?php include 'linkmeta/scripts.php'; ?>
 </body>
 </html>
 
