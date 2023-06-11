@@ -1,7 +1,9 @@
 <?php
     session_start();
     include 'linkmeta/linkmeta.php';   
-    include 'View/Navigation.php';?>
+    include 'View/Navigation.php';
+?>
+    
 <body>
 <?php
     // Front Controller
@@ -15,7 +17,7 @@
     require_once 'controllers/ProfileController.php';
     
     // Render the navbar
-    
+   
     echo isset($_SESSION['useremail'])
     ? "Hi, your name is ".$_SESSION['useremail']
     : "Hi, you are not logged in";
@@ -55,13 +57,6 @@ if (isset($_SESSION['password'])) {
     $controller->controller();
     include 'View/Footer.php';
 ?>
-
-<!-- Optional JavaScript -->
- <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <?php include 'linkmeta/scripts.php'; ?>
 </body>
 </html>
-
-<?php
-   
-?>

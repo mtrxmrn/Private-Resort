@@ -37,24 +37,26 @@
             return ($count > 0); // Returns true if the count is greater than 0
         }
         
-        protected function userLogin($useremail, $password)
-        {
-            // Check if the email exists in the database
-            $sql = "SELECT COUNT(*) FROM users WHERE (UserEmail = ? OR Username = ?) AND UserPass = ?";
-            $stmt = $this->connect()->prepare($sql);
-            $stmt->execute([$useremail, $useremail, $password]); // Use $useremail twice for email and username checks
-            $count = $stmt->fetchColumn();
+       protected function userLogin($useremail, $password)
+{
+    // Check if the email exists in the database
+    $sql = "SELECT COUNT(*) FROM users WHERE (UserEmail = ? OR Username = ?) AND UserPass = ?";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$useremail, $useremail, $password]); // Use $useremail twice for email and username checks
+    $count = $stmt->fetchColumn();
 
-            if ($count > 0) {
-                // Fetch the user data separately
-                $sql = "SELECT id FROM users WHERE (UserEmail = ? OR Username = ?) AND UserPass = ?";
-                $stmt = $this->connect()->prepare($sql);
-                $stmt->execute([$useremail, $useremail, $password]);
-                $user = $stmt->fetch(PDO::FETCH_ASSOC);
-                return isset($user['id']) ? $user['id'] : false;
-            }
-            
-        }
+    if ($count > 0) {
+        // Fetch the user data separately
+        $sql = "SELECT * FROM users WHERE (UserEmail = ? OR Username = ?) AND UserPass = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$useremail, $useremail, $password]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $user;
+    }
+
+    return false; // Return false if login fails
+}
+
 
             protected function getUserID($id)
             {

@@ -15,22 +15,32 @@
         <li class="nav-item">
           <a class="nav-link"  href="">Photos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link"  href="index.php?page=profile">Profile</a>
-        </li>
+       
       </ul>
    <!--For Register -->   
-  <ul class="navbar-nav">
+<ul class="navbar-nav">
+   
+<?php if (isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn']) { ?>
     <li class="nav-item">
-      <a class="nav-link me-1"  href="index.php?page=register">Register</a>
+        <a class="nav-link me-1" href="index.php?page=profile">
+            <?php echo $_SESSION['fname']; ?>'s Profile
+        </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link me-1" href="index.php?page=login">Sign-in</a>
+        <a class="nav-link me-1" href="index.php?page=logout">Sign-out</a>
+    </li>
+<?php } else { ?>
+    <li class="nav-item">
+        <a class="nav-link me-1" href="index.php?page=login">Sign-in</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link me-1" href="index.php?page=logout">Sign-out</a>
+        <a class="nav-link me-1" href="index.php?page=register">Register</a>
     </li>
-  </ul>
+<?php } ?>
+
+</ul>
+
+
   <!--For Register --> 
 </div>
   </div>
