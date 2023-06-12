@@ -37,10 +37,17 @@
                 if ($this->isEmailExists($email)) {
                     echo "Email already exists";
                     return;
-                }
-                
+                }       
                 $this->addUser($username, $fname, $lname, $email, $password, $city);
-                header("Location:index.php?page=home");
+                $loggedInUser = $this->userLogin($username, $password);
+                $_SESSION['useremail'] = $loggedInUser['UserEmail'];
+                $_SESSION['username'] = $loggedInUser['Username'];
+                $_SESSION['fname'] = $loggedInUser['Fname'];
+                $_SESSION['lname'] = $loggedInUser['Lname'];
+                $_SESSION['city'] = $loggedInUser['City'];
+                $_SESSION['LoggedIn'] = true;
+                $_SESSION['id'] = $loggedInUser['ID'];
+                echo '<script>window.location.href = "index.php?page=home";</script>';
             }
             include 'View/RegisterView.php';
         }

@@ -10,7 +10,7 @@
             session_destroy();
     
             // Redirect to the home page or any other desired page
-            header("Location: index.php?page=home");
+            echo '<script>window.location.href = "index.php?page=home";</script>';
             exit;
         }
     }
