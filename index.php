@@ -15,16 +15,12 @@
     require_once 'controllers/RegisterController.php';
     require_once 'controllers/LogoutController.php';
     require_once 'controllers/ProfileController.php';
+    require_once 'controllers/ReservationController.php';
+    require_once 'controllers/AboutUsController.php';
     
     // Render the navbar
    
-    echo isset($_SESSION['useremail'])
-    ? "Hi, your name is ".$_SESSION['useremail']
-    : "Hi, you are not logged in";
-
-if (isset($_SESSION['password'])) {
-    echo ", your last name is ".$_SESSION['password'];
-}
+  
     // Get the requested page from the URL
     $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
@@ -47,6 +43,12 @@ if (isset($_SESSION['password'])) {
             break;
         case 'logout':
             $controller = new LogoutController();
+            break;
+        case 'reservation':
+            $controller = new ReservationController();
+            break;
+        case 'aboutus':
+            $controller = new AboutUsController();
             break;
         default:
             $controller = new HomeController();

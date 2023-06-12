@@ -13,7 +13,10 @@
           <a class="nav-link" href="index.php?page=contact">Contact Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  href="">Photos</a>
+          <a class="nav-link"  href="index.php?page=aboutus">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="index.php?page=reservation">Reserve Now!</a>
         </li>
        
       </ul>

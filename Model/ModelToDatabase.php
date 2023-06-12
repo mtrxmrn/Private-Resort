@@ -37,25 +37,25 @@
             return ($count > 0); // Returns true if the count is greater than 0
         }
         
-       protected function userLogin($useremail, $password)
-{
-    // Check if the email exists in the database
-    $sql = "SELECT COUNT(*) FROM users WHERE (UserEmail = ? OR Username = ?) AND UserPass = ?";
-    $stmt = $this->connect()->prepare($sql);
-    $stmt->execute([$useremail, $useremail, $password]); // Use $useremail twice for email and username checks
-    $count = $stmt->fetchColumn();
+       protected function userLogin($useremail, $password){
 
-    if ($count > 0) {
-        // Fetch the user data separately
-        $sql = "SELECT * FROM users WHERE (UserEmail = ? OR Username = ?) AND UserPass = ?";
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$useremail, $useremail, $password]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $user;
-    }
+            // Check if the email exists in the database
+            $sql = "SELECT COUNT(*) FROM users WHERE (UserEmail = ? OR Username = ?) AND UserPass = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$useremail, $useremail, $password]); // Use $useremail twice for email and username checks
+            $count = $stmt->fetchColumn();
 
-    return false; // Return false if login fails
-}
+            if ($count > 0) {
+                // Fetch the user data separately
+                $sql = "SELECT * FROM users WHERE (UserEmail = ? OR Username = ?) AND UserPass = ?";
+                $stmt = $this->connect()->prepare($sql);
+                $stmt->execute([$useremail, $useremail, $password]);
+                $user = $stmt->fetch(PDO::FETCH_ASSOC);
+                return $user;
+            }
+
+            return false; // Return false if login fails
+        }
 
 
             protected function getUserID($id)
@@ -67,7 +67,29 @@
             return $user;
             }
             
-    
+            protected function sendEmail($recipient, $subject, $message)
+            {
+                $mail = new PHPMailer();
+                $mail->isSMTP();
+                $mail->Host = 'smtp.example.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'your-email@example.com';
+                $mail->Password = 'your-email-password';
+                $mail->SMTPSecure = 'tls';
+                $mail->Port = 587;
+            
+                $mail->setFrom('your-email@example.com', 'Your Name');
+                $mail->addAddress($recipient);
+                $mail->Subject = $subject;
+                $mail->Body = $message;
+            
+                try {
+                    $mail->send();
+                    return true; // Email sent successfully
+                } catch (Exception $e) {
+                    return false; // Email sending failed
+                }
+            }
     }
 
     
