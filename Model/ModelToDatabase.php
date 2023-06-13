@@ -97,6 +97,25 @@
                 return false; // Email could not be sent
             }
         }
+
+        protected function editUser($username, $fname, $lname, $email, $city, $id){
+            $sql = "UPDATE users SET Username = ?, Fname = ?, Lname = ?, UserEmail = ?, City = ? WHERE id = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $success = $stmt->execute([$username, $fname, $lname, $email, $city, $id]);
+            if ($success) {
+                // Database update was successful
+                echo "Update successful!";
+            } else {
+                // Database update failed
+                $errorInfo = $stmt->errorInfo();
+                echo "Update failed: " . $errorInfo[2]; // Output the specific error message
+            }
+            return $success;
+        }
+        
+
+
+        
     }
 
     

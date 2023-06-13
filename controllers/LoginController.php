@@ -17,7 +17,7 @@ class LoginController extends ModelToDatabase {
                 $_SESSION['lname'] = $loggedInUser['Lname'];
                 $_SESSION['city'] = $loggedInUser['City'];
                 $_SESSION['LoggedIn'] = true;
-                $_SESSION['id'] = $loggedInUser['ID'];
+                $_SESSION['id'] = $loggedInUser['id'];
 
                 echo '<script>window.location.href = "index.php?page=home";</script>';
                 exit(); // Add an exit() statement after redirecting

@@ -1,5 +1,5 @@
 <?php
-    include 'Model/ModelToDatabase.php';
+    require_once 'Model/ModelToDatabase.php';
     
     class HomeController extends ModelToDatabase {
         

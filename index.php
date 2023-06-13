@@ -14,6 +14,7 @@ require_once 'controllers/LogoutController.php';
 require_once 'controllers/ProfileController.php';
 require_once 'controllers/ReservationController.php';
 require_once 'controllers/AboutUsController.php';
+require_once 'controllers/EditProfileController.php';
 
 // Initialize the appropriate controller based on the requested page
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
@@ -42,6 +43,9 @@ switch ($page) {
         break;
     case 'aboutus':
         $controller = new AboutUsController();
+        break;
+    case 'edit':
+        $controller = new EditProfileController();
         break;
     default:
         $controller = new HomeController();
