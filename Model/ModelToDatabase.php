@@ -67,29 +67,36 @@
             return $user;
             }
             
-            protected function sendEmail($recipient, $subject, $message)
-            {
-                $mail = new PHPMailer();
+        public function sendEmail($senderEmail, $senderName, $recipientEmail, $recipientName, $subject, $body){
+        
+            $mail = new PHPMailer(true);
+
+            try {
+                // SMTP configuration for Gmail
                 $mail->isSMTP();
-                $mail->Host = 'smtp.example.com';
+                $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'your-email@example.com';
-                $mail->Password = 'your-email-password';
+                $mail->Username = 'your@gmail.com';
+                $mail->Password = 'your-gmail-password';
                 $mail->SMTPSecure = 'tls';
                 $mail->Port = 587;
-            
-                $mail->setFrom('your-email@example.com', 'Your Name');
-                $mail->addAddress($recipient);
+
+                // Sender and recipient details
+                $mail->setFrom($senderEmail, $senderName);
+                $mail->addAddress($recipientEmail, $recipientName);
+
+                // Email content
+                $mail->isHTML(true);
                 $mail->Subject = $subject;
-                $mail->Body = $message;
-            
-                try {
-                    $mail->send();
-                    return true; // Email sent successfully
-                } catch (Exception $e) {
-                    return false; // Email sending failed
-                }
+                $mail->Body = $body;
+
+                // Send the email
+                $mail->send();
+                return true; // Email sent successfully
+            } catch (Exception $e) {
+                return false; // Email could not be sent
             }
+        }
     }
 
     

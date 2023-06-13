@@ -26,7 +26,7 @@
   <meta charset="UTF-8">
   <title>Registration Form</title>
   <!-- Css AddDesign-->
-  <link rel="stylesheet" href="../../CSS/Register.css">
+  <link rel="stylesheet" href="CSS/Register.css">
   <title>Customer Profile</title>
 
   <title>Login Form</title>
