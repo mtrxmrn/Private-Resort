@@ -19,21 +19,18 @@
 
       <ul class="navbar fs-5 navbar-expand-sm text-white justify-content-center list-unstyled ">
         <li class="nav-item p-5">
-          <a class="nav-link active" href="index.php">Home
+          <a class="nav-link active" href="index.php?page=home">Home
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
         <li class="nav-item p-5 ">
-          <a class="nav-link" target="_blank" href="View/domain/ContactUs.php">Contact Us</a>
+          <a class="nav-link" href="index.php?page=contact">Contact Us</a>
         </li>
         <li class="nav-item p-5">
-          <a class="nav-link"  href="#photos">Photos</a>
+      <a class="nav-link me-1" href="index.php?page=register">Register</a>
         </li>
         <li class="nav-item p-5">
-      <a class="nav-link me-1" target="_blank" href="View/domain/register.php">Register</a>
-        </li>
-        <li class="nav-item p-5">
-      <a class="nav-link me-1" target="_blank" href="View/domain/login.php">Sign-in</a>
+      <a class="nav-link me-1" href="index.php?page=login">Sign-in</a>
     </li>
       </ul>
       
