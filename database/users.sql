@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2023 at 11:19 PM
+-- Generation Time: Jun 19, 2023 at 06:06 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -29,22 +29,26 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `Username` varchar(255) NOT NULL,
-  `Fname` varchar(255) NOT NULL,
-  `Lname` varchar(255) NOT NULL,
-  `UserEmail` varchar(255) NOT NULL,
-  `UserPass` varchar(255) NOT NULL,
-  `City` varchar(255) NOT NULL
+  `username` varchar(255) NOT NULL,
+  `fname` varchar(255) NOT NULL,
+  `lname` varchar(255) NOT NULL,
+  `useremail` varchar(255) NOT NULL,
+  `userpass` varchar(255) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `gender` varchar(11) NOT NULL,
+  `dob` date DEFAULT NULL,
+  `reservedate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `Username`, `Fname`, `Lname`, `UserEmail`, `UserPass`, `City`) VALUES
-(19, 'hdfhd', 'hfdh', 'gdfg', 'johnmatrixmariano@gmail.com', 'dsg', 'city1'),
-(20, 'hdfhds', 'hfdh', 'gdfg', 'johnmatrixmarianos@gmail.com', 'dsg', 'city1'),
-(21, 'ghdhf', 'hdfh', 'dfhd', 'johnmatrixmarianoss@gmail.com', 'asd', 'city2');
+INSERT INTO `users` (`id`, `username`, `fname`, `lname`, `useremail`, `userpass`, `phone`, `gender`, `dob`, `reservedate`) VALUES
+(19, 'trix', 'Johnny Matrix', 'Marianos', 'johnmatrixmariano@gmail.com', '123', 0, 'Male', '1999-09-17', '2023-06-22'),
+(35, 'Trixie', 'John Matrix', 'Mariano', 'johnmatrixmariano1@gmail.com', '12345678', 2147483647, 'male', '1999-09-17', NULL),
+(36, '19002384200', 'John Matrix', 'Mariano', 'johnmatrixmariahfghnohjfghfh@gmail.com', '12345678', 2147483647, 'female', '2023-06-28', NULL),
+(37, 'Trixiess', 'John Matrix', 'Mariano', 'johnmatrixmariano12@gmail.com', '12345678', 2147483647, 'male', '2023-06-29', NULL);
 
 --
 -- Indexes for dumped tables
@@ -64,7 +68,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
