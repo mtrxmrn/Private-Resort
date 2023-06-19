@@ -81,6 +81,45 @@
             }
             return $success;
         }
+
+        protected function reserve($id,$fullname,$email,$phone,$date,$time,$numPersons,$notes){
+            $sql = "INSERT INTO reservation (id, fullname, email, phone, reservedate, reservetime, personcount, notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql2 = "UPDATE users SET reservedate = ? WHERE id = ?";
+            try {
+                $stmt = $this->connect()->prepare($sql);
+                $stmt->execute([$id, $fullname, $email, $phone, $date, $time, $numPersons, $notes]);
+                
+                $stmt2 = $this->connect()->prepare($sql2);
+                $stmt2->execute([$date,$id]);
+
+                return $stmt;
+            } catch (PDOException $e) {
+                echo "ERROR: " . $e->getMessage();
+            }
+        }
+
+
+        protected function isDateExist($date){
+
+            // Check if the email exists in the database
+            $sql = "SELECT COUNT(*) FROM reservation WHERE reservedate = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$date]);
+            $count = $stmt->fetchColumn();
+    
+            return ($count > 0); // Returns true if the count is greater than 0
+        }
+
+        protected function isUserReserve($id){
+
+            // Check if the email exists in the database
+            $sql = "SELECT COUNT(*) FROM reservation WHERE id = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$id]);
+            $count = $stmt->fetchColumn();
+    
+            return ($count > 0); // Returns true if the count is greater than 0
+        }
         
 
 

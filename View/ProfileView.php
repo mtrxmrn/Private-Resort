@@ -52,7 +52,7 @@
             <div class="form-group row">
               <label for="city" class="col-sm-2 col-form-label" >Booking status</label>
               <div class="col-sm-10">
-                <input type="text" id="city" class="form-control" name="status"value="<?= 'No bookings!'; ?>" readonly>
+                <input type="text" id="city" class="form-control" name="status"value="<?= $_SESSION['reservedate']; ?>" readonly>
               </div>
             </div>
             <button type="submit" class="btn btn-primary" name="submit">Edit Profile</button>

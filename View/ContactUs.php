@@ -9,11 +9,26 @@
           <form action="index.php?page=contact" method="post">
             <div class="form-group">
               <label for="email">Email Address</label>
-              <input type="email" id="email" class="form-control" name="email" placeholder="Enter your email address">
+              
+              <input type="email" id="email" class="form-control" name="email" placeholder="Enter your email address"
+              <?php
+              if(isset($_SESSION['id'])){
+                echo 'value="' . $_SESSION['useremail'] . '"';
+              }
+              ?>
+              >
             </div>
             <div class="form-group">
               <label for="lastName">Name</label>
-              <input type="text" id="Name" class="form-control" name="name" placeholder="Enter Your Name">
+              <input type="text" id="Name" class="form-control" name="name" placeholder="Enter Your Name"
+              <?php
+              if(isset($_SESSION['id'])){
+                echo 'value="' . $_SESSION['fname'] . ' ' . $_SESSION['lname'] . '"';
+              }
+              ?>
+              >
+            </div>
+
             </div>
             <div class="form-group">
               <label for="text">Subject</label>

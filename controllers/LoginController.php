@@ -20,6 +20,7 @@ class LoginController extends ModelToDatabase {
                 $_SESSION['dob'] = $loggedInUser['dob'];
                 $_SESSION['LoggedIn'] = true;
                 $_SESSION['id'] = $loggedInUser['id'];   
+                $_SESSION['reservedate'] = $loggedInUser['reservedate'];
                 $this->loginsuccess();
                 exit;
             } else {
