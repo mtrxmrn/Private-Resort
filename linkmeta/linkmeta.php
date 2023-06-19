@@ -27,6 +27,8 @@
   <title>Registration Form</title>
   <!-- Css AddDesign-->
   <link rel="stylesheet" href="CSS/Register.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
   <title>Customer Profile</title>
 
   <title>Login Form</title>

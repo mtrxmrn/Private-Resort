@@ -11,21 +11,28 @@ class LoginController extends ModelToDatabase {
             $loggedInUser = $this->userLogin($username, $password);
             if ($loggedInUser) {
                 // Store user details in session variables
-                $_SESSION['useremail'] = $loggedInUser['UserEmail'];
-                $_SESSION['username'] = $loggedInUser['Username'];
-                $_SESSION['fname'] = $loggedInUser['Fname'];
-                $_SESSION['lname'] = $loggedInUser['Lname'];
-                $_SESSION['city'] = $loggedInUser['City'];
+                $_SESSION['useremail'] = $loggedInUser['useremail'];
+                $_SESSION['username'] = $loggedInUser['username'];
+                $_SESSION['fname'] = $loggedInUser['fname'];
+                $_SESSION['lname'] = $loggedInUser['lname'];
+                $_SESSION['phone'] = $loggedInUser['phone'];
+                $_SESSION['gender'] = $loggedInUser['gender'];
+                $_SESSION['dob'] = $loggedInUser['dob'];
                 $_SESSION['LoggedIn'] = true;
-                $_SESSION['id'] = $loggedInUser['id'];
-
-                echo '<script>window.location.href = "index.php?page=home";</script>';
-                exit(); // Add an exit() statement after redirecting
+                $_SESSION['id'] = $loggedInUser['id'];   
+                $this->loginsuccess();
+                exit;
             } else {
                 $_SESSION['LoggedIn'] = false;
-                echo "Invalid username or password"; // Display an error message
+               
+                echo '<script>Swal.fire("Oooops", "Incorrect Username or Password", "error");</script>';
+               
             }
         }
         include 'View/Login.php';
+    }
+
+    public function loginsuccess(){
+        include 'View/WelcomePage.php';
     }
 }

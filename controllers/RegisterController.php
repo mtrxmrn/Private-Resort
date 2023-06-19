@@ -13,7 +13,9 @@
                 $confirmEmail = $_POST['confirmEmail'];
                 $password = $_POST['password'];
                 $confirmPassword = $_POST['confirmPassword'];
-                $city = $_POST['city'];
+                $phone = '+63' . $_POST['phone'];
+                $gender = $_POST['gender'];
+                $dob = $_POST['dob'];
                 if ($email != $confirmEmail) {
                     echo "Email does not match";
                     return;
@@ -38,16 +40,18 @@
                     echo "Email already exists";
                     return;
                 }       
-                $this->addUser($username, $fname, $lname, $email, $password, $city);
+                $this->addUser($username, $fname, $lname, $email, $password, $phone , $gender, $dob);
                 $loggedInUser = $this->userLogin($username, $password);
-                $_SESSION['useremail'] = $loggedInUser['UserEmail'];
-                $_SESSION['username'] = $loggedInUser['Username'];
-                $_SESSION['fname'] = $loggedInUser['Fname'];
-                $_SESSION['lname'] = $loggedInUser['Lname'];
-                $_SESSION['city'] = $loggedInUser['City'];
+                $_SESSION['useremail'] = $loggedInUser['useremail'];
+                $_SESSION['username'] = $loggedInUser['username'];
+                $_SESSION['fname'] = $loggedInUser['fname'];
+                $_SESSION['lname'] = $loggedInUser['lname'];
+                $_SESSION['phone'] = $loggedInUser['phone'];
+                $_SESSION['gender'] = $loggedInUser['gender'];
+                $_SESSION['dob'] = $loggedInUser['dob'];
                 $_SESSION['LoggedIn'] = true;
-                $_SESSION['id'] = $loggedInUser['ID'];
-                echo '<script>window.location.href = "index.php?page=home";</script>';
+                $_SESSION['id'] = $loggedInUser['id'];
+                include 'View/WelcomePage.php';
             }
             include 'View/RegisterView.php';
         }

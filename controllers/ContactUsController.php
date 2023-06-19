@@ -47,7 +47,7 @@ class ContactUsController
             $mail->Port = 587;
 
             // Sender and recipient details
-            $mail->setFrom($senderEmail,"Jim's Resort Customer - " . $senderName);
+            $mail->setFrom($senderEmail,$senderEmail . ' - ' . $senderName);
             $mail->addAddress('johnmatrixmariano@gmail.com', 'Jims Resort');
 
             // Email content
