@@ -16,6 +16,7 @@ require_once 'controllers/ReservationController.php';
 require_once 'controllers/AboutUsController.php';
 require_once 'controllers/EditProfileController.php';
 
+
 // Initialize the appropriate controller based on the requested page
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
