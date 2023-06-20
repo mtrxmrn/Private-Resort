@@ -6,6 +6,7 @@ require_once 'View/admin/AdminSidebar.php';
 require_once 'controllers/admin/PendingController.php';
 require_once 'controllers/admin/DashboardController.php';
 require_once 'controllers/admin/ReservedController.php';
+require_once 'controllers/admin/DeclinedController.php';
 
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
@@ -20,6 +21,9 @@ switch ($page) {
     case 'reserved':
         $controller = new ReservedController();
         break;
+    case 'decline':
+        $controller = new DeclinedController();
+        break;    
     default:
         $controller = new DashboardController();
         break;

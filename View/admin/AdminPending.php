@@ -25,7 +25,7 @@
                     <td><?php echo $row['gcashName']; ?></td>
                     <td><?php echo $row['gcashNumber']; ?></td>
                     <td><?php echo $row['amount']; ?></td>
-                    <td><?php echo $row['pending']; ?></td>
+                    <td><?php echo "Pending" ?></td>
                     <td>
                     <form action="admin.php?page=pending" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">

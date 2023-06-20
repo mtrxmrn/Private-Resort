@@ -11,6 +11,7 @@
                 <th>Gcash Number</th>
                 <th>Amount</th>
                 <th>Pending</th>
+                <th>Operation</th>
                 <!-- Add more table headers/columns as needed -->
             </tr>
         </thead>
@@ -24,8 +25,9 @@
                     <td><?php echo $row['gcashName']; ?></td>
                     <td><?php echo $row['gcashNumber']; ?></td>
                     <td><?php echo $row['amount']; ?></td>
-                    <td><?php echo "Reserved"; ?></td>
+                    <td><?php echo "Declined"; ?></td>
                     <td>
+
 
                     </td>
                     <!-- Add more table cells/columns as needed -->

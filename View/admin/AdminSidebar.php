@@ -33,6 +33,12 @@
               <span>Reserved Dates</span>
             </a>
           </li>
+          <li>
+            <a href="admin.php?page=decline" class="text-white nav-link px-3">
+              <span class="me-2"><i class="bi bi-book-fill"></i></span>
+              <span>Declined Dates</span>
+            </a>
+          </li>
           <li class="my-4">
             <hr class="dropdown-divider bg-light" />
           </li>
