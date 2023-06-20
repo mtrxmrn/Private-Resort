@@ -4,7 +4,11 @@
     class RegisterController extends ModelToDatabase{
 
         public function controller(){
-           
+            if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == true){
+                echo '<script>window.location.href = "index.php?page=home";</script>';
+                exit;
+            }
+            
             if(isset($_POST['submit'])){
                 $username = $_POST['username'];
                 $fname = $_POST['fname'];

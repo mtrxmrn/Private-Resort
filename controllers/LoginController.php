@@ -4,6 +4,11 @@ require_once 'Model/ModelToDatabase.php';
 
 class LoginController extends ModelToDatabase {
     public function controller() {
+        
+        if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == true){
+            echo '<script>window.location.href = "index.php?page=home";</script>';
+            exit;
+        }
         if (isset($_POST['submit'])) { // Check if the submit button is pressed
             $username = $_POST['useremail'];
             $password = $_POST['password'];
