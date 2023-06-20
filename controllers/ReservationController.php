@@ -30,48 +30,47 @@
                         echo '<script>Swal.fire("Reservation Exist", "The date is taken by other customer", "error");</script>';
                     }
                     else{
-                        $this->reserve($id, $fullname,$email,$phone,$date,$time,$numPersons,$notes);
+                        $this->reserve($id, $fullname,$email,$phone,$date,$time,$numPersons,$notes,true);
                         $getDate = $this->getUserID($id);
                         $_SESSION['reservedate'] = $getDate['reservedate'];
-                        $this->emailuser($email,$fullname,$date);
+                        //$this->emailuser($email,$fullname,$date);
+                        echo '<script>window.location.href = "index.php?page=gcash";</script>';
+
                     }
                 }
             }
-            include 'View/ReservationView.php';
+            include_once 'View/ReservationView.php';
         }
 
         public function emailuser($email, $fullname, $date){
 
             $mail = new PHPMailer(true);
 
-        try {
-            // SMTP configuration for Gmail
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'mmatrixmariano1@gmail.com';
-            $mail->Password = 'ealinoqcgqyxiayj';
-            $mail->SMTPSecure = 'tls';
-            $mail->Port = 587;
+            try {
+                // SMTP configuration for Gmail
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'mmatrixmariano1@gmail.com';
+                $mail->Password = 'ealinoqcgqyxiayj';
+                $mail->SMTPSecure = 'tls';
+                $mail->Port = 587;
 
-            // Sender and recipient details
-            $mail->setFrom('mmatrixmariano1@gmail.com', "jim's Resort");
-            $mail->addAddress($email, $fullname);
+                // Sender and recipient details
+                $mail->setFrom('mmatrixmariano1@gmail.com', "jim's Resort");
+                $mail->addAddress($email, $fullname);
 
-            // Email content
-            $mail->isHTML(true);
-            $mail->Subject = "Welcome to Jim's Resort";
-            $mail->Body = "Dear Mr/Mrs " . $_SESSION['lname']. '. We would like to inform you that your booking in: ' . $date . ' is on process. Please provide us supporting documents to officially verify your booking!. Thank you' ;
+                // Email content
+                $mail->isHTML(true);
+                $mail->Subject = "Welcome to Jim's Resort";
+                $mail->Body = "Dear Mr/Mrs " . $_SESSION['lname']. '. We would like to inform you that your booking in: ' . $date . ' is on process. Please provide us supporting documents to officially verify your booking!. Thank you' ;
 
-            // Send the email
-            $mail->send();
-            return true; // Email sent successfully
-        } catch (Exception $e) {
-            return false; // Email could not be sent
+                // Send the email
+                $mail->send();
+                return true; // Email sent successfully
+            } catch (Exception $e) {
+                return false; // Email could not be sent
+            }
         }
-
-        }
-
     }
-
 ?>

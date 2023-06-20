@@ -15,6 +15,7 @@ require_once 'controllers/ProfileController.php';
 require_once 'controllers/ReservationController.php';
 require_once 'controllers/AboutUsController.php';
 require_once 'controllers/EditProfileController.php';
+require_once 'controllers/GcashController.php';
 
 
 // Initialize the appropriate controller based on the requested page
@@ -48,6 +49,9 @@ switch ($page) {
     case 'edit':
         $controller = new EditProfileController();
         break;
+    case 'gcash':
+        $controller = new GcashController();
+        break;        
     default:
         $controller = new HomeController();
         break;

@@ -83,11 +83,11 @@
         }
 
         protected function reserve($id,$fullname,$email,$phone,$date,$time,$numPersons,$notes){
-            $sql = "INSERT INTO reservation (id, fullname, email, phone, reservedate, reservetime, personcount, notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO reservation (id, fullname, email, phone, reservedate, reservetime, personcount, notes, pending) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $sql2 = "UPDATE users SET reservedate = ? WHERE id = ?";
             try {
                 $stmt = $this->connect()->prepare($sql);
-                $stmt->execute([$id, $fullname, $email, $phone, $date, $time, $numPersons, $notes]);
+                $stmt->execute([$id, $fullname, $email, $phone, $date, $time, $numPersons, $notes,true]);
                 
                 $stmt2 = $this->connect()->prepare($sql2);
                 $stmt2->execute([$date,$id]);
@@ -121,7 +121,30 @@
             return ($count > 0); // Returns true if the count is greater than 0
         }
         
+       protected function insertGcash($paymentScreenshot, $amount, $gcashName, $gcashNumber, $referenceNumber, $email, $note, $id) {
+    $sql = "INSERT INTO gcash (paymentScreenshot, amount, gcashName, gcashNumber, referenceNumber, email, note, id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    try {
+        $stmt = $this->connect()->prepare($sql);
+        
+        // Bind parameters with appropriate data types
+        $stmt->bindValue(1, $paymentScreenshot, PDO::PARAM_STR);
+        $stmt->bindValue(2, $amount, PDO::PARAM_STR);
+        $stmt->bindValue(3, $gcashName, PDO::PARAM_STR);
+        $stmt->bindValue(4, $gcashNumber, PDO::PARAM_STR);
+        $stmt->bindValue(5, $referenceNumber, PDO::PARAM_STR);
+        $stmt->bindValue(6, $email, PDO::PARAM_STR);
+        $stmt->bindValue(7, $note, PDO::PARAM_STR);
+        $stmt->bindValue(8, $id, PDO::PARAM_STR);
+        
+        $stmt->execute();
+        return $stmt;
+    } catch (PDOException $e) {
+        echo "ERROR: " . $e->getMessage();
+    }
+}
 
+
+        
 
         
     }
