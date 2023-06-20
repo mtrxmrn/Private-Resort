@@ -30,7 +30,7 @@
                         echo '<script>Swal.fire("Reservation Exist", "The date is taken by other customer", "error");</script>';
                     }
                     else{
-                        $this->reserve($id, $fullname,$email,$phone,$date,$time,$numPersons,$notes,true);
+                        $this->reserve($id, $fullname,$email,$phone,$date,$time,$numPersons,$notes,0);
                         $getDate = $this->getUserID($id);
                         $_SESSION['reservedate'] = $getDate['reservedate'];
                         //$this->emailuser($email,$fullname,$date);
