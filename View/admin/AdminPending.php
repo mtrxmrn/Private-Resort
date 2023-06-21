@@ -27,7 +27,7 @@
                     <td><?php echo $row['amount']; ?></td>
                     <td><?php echo "Pending" ?></td>
                     <td>
-                    <form action="admin.php?page=pending" method="POST">
+                    <form action="Admin.php?page=pending" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                         <button type="submit" name="confirm" class="btn btn-success">CONFIRM</button>
                         <button type="submit" name="decline" class="btn btn-danger">DECLINE</button>

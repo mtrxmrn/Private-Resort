@@ -8,7 +8,7 @@
         </div>
         <ul class="navbar-nav">
           <li>
-            <a href="admin.php?page=home" class="nav-link px-3 text-white active">
+            <a href="Admin.php?adminpage=home" class="nav-link px-3 text-white active">
               <span class="me-2"><i class="bi bi-speedometer2"></i></span>
               <span>Dashboard</span>
             </a>
@@ -22,19 +22,19 @@
             </div>
           </li>
           <li>
-            <a href="admin.php?page=pending" class="text-white nav-link px-3">
+            <a href="Admin.php?adminpage=pending" class="text-white nav-link px-3">
               <span class="me-2"><i class="bi bi-book-fill"></i></span>
               <span>Pending Books</span>
             </a>
           </li>
           <li>
-            <a href="admin.php?page=reserved" class="text-white nav-link px-3">
+            <a href="Admin.php?adminpage=reserved" class="text-white nav-link px-3">
               <span class="me-2"><i class="bi bi-book-fill"></i></span>
               <span>Reserved Dates</span>
             </a>
           </li>
           <li>
-            <a href="admin.php?page=decline" class="text-white nav-link px-3">
+            <a href="Admin.php?adminpage=decline" class="text-white nav-link px-3">
               <span class="me-2"><i class="bi bi-book-fill"></i></span>
               <span>Declined Dates</span>
             </a>

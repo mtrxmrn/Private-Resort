@@ -13,7 +13,7 @@ class LoginController extends ModelToDatabase {
             $username = $_POST['useremail'];
             $password = $_POST['password'];
             if($username == "admin" & $password == "123"){
-                echo '<script>window.location.href = "admin.php";</script>';
+                echo '<script>window.location.href = "Admin.php";</script>';
             }
 
             $loggedInUser = $this->userLogin($username, $password);

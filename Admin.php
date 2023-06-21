@@ -8,10 +8,10 @@ require_once 'controllers/admin/DashboardController.php';
 require_once 'controllers/admin/ReservedController.php';
 require_once 'controllers/admin/DeclinedController.php';
 
-$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+$adminpage = isset($_GET['adminpage']) ? $_GET['adminpage'] : 'home';
 
 
-switch ($page) {
+switch ($adminpage) {
     case 'home':
         $controller = new DashboardController();
         break;
