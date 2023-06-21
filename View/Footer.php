@@ -15,6 +15,7 @@
 <body>
 <footer>
     <div class="container-fluid p-2 bg-black">
+      
       <div class="h2 pt-5 text-center text-white">JimsResort.com</div>
 
       <ul class="navbar fs-5 navbar-expand-sm text-white justify-content-center list-unstyled ">

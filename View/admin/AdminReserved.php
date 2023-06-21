@@ -1,6 +1,7 @@
-<div class="container mt-5">
-    <h2>Table Contents</h2>
+<div class="col-9">>
+<div class="container justify-content d-flex ms-5 flex-column">
     <table class="table table-striped">
+    <h2 class="">Table Contents</h2>
         <thead>
             <tr>
                 <th>ID</th>
@@ -34,3 +35,4 @@
         </tbody>
     </table>
 </div>
+</div

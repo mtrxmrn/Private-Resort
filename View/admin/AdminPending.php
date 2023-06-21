@@ -1,17 +1,19 @@
-<div class="container mt-5">
-    <h2>Table Contents</h2>
-    <table class="table table-striped">
-        <thead>
+ <!-- Table Contents -->
+ <div class="col-9">
+      <div class="container justify-content d-flex ms-5 flex-column">
+        <table class="table table-striped">
+          <h2 class="">Table Contents</h2>
+          <thead>
             <tr>
-                <th>ID</th>
-                <th>Email</th>
-                <th>Full Name</th>
-                <th>Reserve Date</th>
-                <th>Gcash Name</th>
-                <th>Gcash Number</th>
-                <th>Amount</th>
-                <th>Pending</th>
-                <th>Operation</th>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Full Name</th>
+              <th>Reserve Date</th>
+              <th>Gcash Name</th>
+              <th>Gcash Number</th>
+              <th>Amount</th>
+              <th>Pending</th>
+              <th>Operation</th>
                 <!-- Add more table headers/columns as needed -->
             </tr>
         </thead>
@@ -40,3 +42,4 @@
         </tbody>
     </table>
 </div>
+ </div>

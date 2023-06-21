@@ -9,9 +9,7 @@
             // Call the pending() method to fetch the pending reservations
             $rows = $this->pending();
 
-            foreach($rows as $row){
-                echo $row['id'];
-            }
+           
             if (isset($_POST['confirm'])) {
                 $id = $_POST['id'];
                 $this->confirm($id);

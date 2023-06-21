@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container ms-0">
   <div class="row">
     <!-- Sidebar -->
     <div class="custom-margin col-3">
@@ -62,5 +62,3 @@
         </ul>
       </div>
     </div>
-  </div>
-</div>
