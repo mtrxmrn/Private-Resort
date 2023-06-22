@@ -1,5 +1,5 @@
 <div class="col-9">>
-<div class="container justify-content d-flex ms-5 flex-column">
+<div class="container justify-content d-flex ms-1 flex-column">
     <table class="table table-striped">
     <h2 class="">Table Contents</h2>
         <thead>
